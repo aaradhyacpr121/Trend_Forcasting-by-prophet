@@ -1,7 +1,3 @@
-# prophet_surat_all_eval.py
-# Forecasting multiple complaint columns for Surat dataset with evaluation
-# Handles flexible date formats automatically
-
 import pandas as pd
 from prophet import Prophet
 import matplotlib.pyplot as plt
@@ -76,7 +72,7 @@ for col, title in targets.items():
     forecast_full.to_csv(forecast_file, index=False)
     print(f"Saved full forecast to {forecast_file}")
 
-#Show summary table
+
 
 results_df = pd.DataFrame(results, columns=["Complaint Type", "MAE", "RMSE", "MAPE (%)"])
 print("\n📊 Evaluation Summary:\n")
@@ -84,3 +80,4 @@ print(results_df.to_string(index=False))
 
 results_df.to_csv("evaluation_summary.csv", index=False)
 print("\n✅ Forecasting + Evaluation complete! Check 'forecast_plots/' folder, forecast CSVs, model JSONs, and 'evaluation_summary.csv'")
+
